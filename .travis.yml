@@ -79,6 +79,7 @@ jobs:
 
     - stage: "Build"
       name: "Build nginx"
+      language: generic
       sudo: required
       services:
         - docker
@@ -91,6 +92,7 @@ jobs:
 
     - stage: "Build"
       name: "Build API"
+      language: generic
       sudo: required
       services:
         - docker
@@ -103,8 +105,9 @@ jobs:
 
 
     - stage: "Security"
-      name: "Check Security of nginx Container"
+      name: "Check CVE Security of nginx Container"
       # if: branch IN (develop, master)
+      language: generic
       sudo: required
       services:
         - docker
